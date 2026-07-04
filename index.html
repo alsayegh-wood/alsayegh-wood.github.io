@@ -17,9 +17,10 @@ p{margin-top:10px;color:#ddd}
 .sec{display:flex;align-items:center;gap:10px;color:#e5bf74;font-weight:bold;margin:22px 0 12px}
 .sec:before,.sec:after{content:"";height:1px;background:#6d542b;flex:1}
 .people{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-details{background:#242424;border:1px solid #c89a49;border-radius:16px}
-summary{padding:15px;cursor:pointer;list-style:none;text-align:center;color:#e5bf74;font-weight:bold}
-summary::-webkit-details-marker{display:none}
+ .contactBox{background:#242424;border:1px solid #c89a49;border-radius:16px}
+.summary{padding:15px;cursor:pointer;text-align:center;color:#e5bf74;font-weight:bold}
+.content{display:none;padding-bottom:10px}
+
 .phone{display:block;margin:10px;padding:11px;background:#313131;border:1px solid #555;border-radius:10px;color:#fff;text-decoration:none}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -36,23 +37,27 @@ summary::-webkit-details-marker{display:none}
 <p>جودة التنفيذ... بصمة تدوم</p>
 
 <div class="sec">فريق التواصل</div>
+
 <div class="people">
-<details>
-<summary><i class="fa-brands fa-whatsapp"></i> أنس صايغ</summary>
+<div class="contactBox">
+<div class="summary" onclick="toggleBoth()"><i class="fa-brands fa-whatsapp"></i> أنس صايغ</div>
+<div class="content">
 <a class="phone" href="https://wa.me/963944959386">سوريا | +963 944 959 386</a>
 <a class="phone" href="https://wa.me/905550099931">تركيا | +90 555 009 9931</a>
-</details>
-<details>
-<summary><i class="fa-brands fa-whatsapp"></i> أحمد صايغ</summary>
+</div>
+</div>
+<div class="contactBox">
+<div class="summary" onclick="toggleBoth()"><i class="fa-brands fa-whatsapp"></i> أحمد صايغ</div>
+<div class="content">
 <a class="phone" href="https://wa.me/963944959385">سوريا | +963 944 959 385</a>
 <a class="phone" href="https://wa.me/905360524624">تركيا | +90 536 052 4624</a>
-</details>
 </div>
-
+</div>
+</div>
 <div class="sec">✦ تابعونا على منصات التواصل ✦</div>
 <div class="grid3">
 <a class="btn" href="https://www.instagram.com/alsayegh.wood?igsh=MXBwa3QwajA1cHRxMg=="><i class="fa-brands fa-instagram"></i>Instagram</a>
-<a class="btn" href="https://www.facebook.com/share/18s1iQ5r4a/"><i class="fa-brands fa-facebook"></i>Facebook</a>
+<a class="btn" href="https://www.facebook.com/share/1ErZLLZoAY/"><i class="fa-brands fa-facebook"></i>Facebook</a>
 <a class="btn" href="https://www.tiktok.com/@sayegh.wood?_r=1&_t=ZS-97edXjztDqH"><i class="fa-brands fa-tiktok"></i>TikTok</a>
 </div>
 
@@ -62,9 +67,13 @@ summary::-webkit-details-marker{display:none}
 <div class="btn"><i class="fa-solid fa-building"></i>مكتب - تركيا</div>
 </div>
 
-<div style="text-align:center;margin-top:22px;color:#e5bf74;font-size:16px;font-weight:bold">
-شكراً لثقتكم بنا... نعدكم بأن تبقى الجودة عنواننا دائماً.
-</div>
-
 <div class="footer">© ALSAYEGH WOOD</div>
-</div></body></html>
+</div>
+<script>
+let opened=false;
+function toggleBoth(){
+ opened=!opened;
+ document.querySelectorAll('.content').forEach(c=>c.style.display=opened?'block':'none');
+}
+</script>
+</body></html>
